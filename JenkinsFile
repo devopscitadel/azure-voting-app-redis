@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Goodbye Hello') {
+            steps {
+                echo 'Goodbye World'
+            }
+        }
+        stage('Print env variabled') {
+            steps {
+                sh label: '', script: 'printenv'
+            }
+        }
+    }
+}
